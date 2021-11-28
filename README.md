@@ -31,7 +31,7 @@ Unpack the archive:
 
 Invoke the fuzzing:
 
-    ./jazzer --cp=build/libs/poifuzz-all.jar --instrumentation_includes=org.apache.poi.**:org.apache.xmlbeans.**:org.apache.tika.** --target_class=org.dstadler.tika.fuzz.Fuzz -rss_limit_mb=4096 corpus
+    ./jazzer --cp=build/libs/tikafuzz-all.jar --instrumentation_includes=org.apache.poi.**:org.apache.xmlbeans.**:org.apache.tika.** --target_class=org.dstadler.tika.fuzz.Fuzz -rss_limit_mb=8192 corpus
 
 In this mode Jazzer will stop whenever it detects an unexpected exception.
 

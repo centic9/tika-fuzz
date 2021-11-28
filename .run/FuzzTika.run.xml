@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run Fuzzing - Tika" type="ShConfigurationType">
-    <option name="SCRIPT_TEXT" value="./gradlew shadowJar &amp;&amp; ./jazzer --cp=build/libs/poifuzz-all.jar --instrumentation_includes=org.apache.poi.**:org.apache.xmlbeans.**:org.apache.tika.** --target_class=org.dstadler.tika.fuzz.FuzzTika -rss_limit_mb=4096 corpus" />
+    <option name="SCRIPT_TEXT" value="./gradlew shadowJar &amp;&amp; ./jazzer --cp=build/libs/tikafuzz-all.jar --instrumentation_includes=org.apache.poi.**:org.apache.xmlbeans.**:org.apache.tika.** --target_class=org.dstadler.tika.fuzz.FuzzTika -rss_limit_mb=8192 corpus" />
     <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-    <option name="SCRIPT_PATH" value="./jazzer --cp=build/libs/poifuzz-all.jar --target_class=org.dstadler.tika.fuzz.FuzzTika -rss_limit_mb=4096 corpusTika" />
+    <option name="SCRIPT_PATH" value="./jazzer --cp=build/libs/tikafuzz-all.jar --target_class=org.dstadler.tika.fuzz.FuzzTika -rss_limit_mb=4096 corpusTika" />
     <option name="SCRIPT_OPTIONS" value="" />
     <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
     <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
