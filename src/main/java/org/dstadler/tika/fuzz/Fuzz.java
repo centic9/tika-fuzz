@@ -6,7 +6,7 @@ import java.io.InputStream;
 
 import org.apache.tika.Tika;
 
-public class FuzzTika {
+public class Fuzz {
 	private static final Tika tika = new Tika();
 
 	public static void fuzzerTestOneInput(byte[] input) {
