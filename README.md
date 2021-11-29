@@ -33,7 +33,10 @@ Invoke the fuzzing:
 
     ./jazzer --cp=build/libs/tikafuzz-all.jar --instrumentation_excludes=org.apache.logging.**:org.slf4j.** --target_class=org.dstadler.tika.fuzz.Fuzz -rss_limit_mb=8192 corpus
 
-In this mode Jazzer will stop whenever it detects an unexpected exception.
+In this mode Jazzer will stop whenever it detects an unexpected exception
+or crashes.
+
+You can use `--keep_going=10` to report a given number of exceptions before stopping.
 
 See `./jazzer` for options which can control details of how Jazzer operates.
 
@@ -41,7 +44,3 @@ See `./jazzer` for options which can control details of how Jazzer operates.
 
 If you want to test with a more recent version of Apache Tika, you can add 
 locally compiled jars of Apache Tika to the front `--cp` commandline argument (delimited with colon ':')
-
-# Detected issues
-
-* 
