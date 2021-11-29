@@ -22,6 +22,10 @@ Download the corpus of test-files from Apache POI sources
 
     svn co https://svn.apache.org/repos/asf/poi/trunk/test-data corpus
 
+You should also add documents from other testing-corpora as this only 
+has some document types while Tika can detect and parse a large set
+of other files as well.
+
 Download Jazzer from the [releases page](https://github.com/CodeIntelligenceTesting/jazzer/releases), 
 choose the latest version and select the file `jazzer-<os>-<version>.tar.gz`
 
