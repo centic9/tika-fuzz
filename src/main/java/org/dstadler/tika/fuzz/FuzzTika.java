@@ -7,8 +7,9 @@ import java.io.InputStream;
 import org.apache.tika.Tika;
 
 public class FuzzTika {
+	private static final Tika tika = new Tika();
+
 	public static void fuzzerTestOneInput(byte[] input) {
-		final Tika tika = new Tika();
 
 		// try to invoke various methods which parse documents/workbooks/slide-shows/...
 
