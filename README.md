@@ -45,7 +45,7 @@ See `./jazzer` for options which can control details of how Jazzer operates.
 If you want to test with a more recent version of Apache Tika, you can add 
 locally compiled jars of Apache Tika to the front `--cp` commandline argument (delimited with colon ':')
 
-#### Licensing
+# License
 
 Copyright 2021 Dominik Stadler
 
