@@ -1,4 +1,4 @@
-This is a small project for fuzzing Apache Tika with the [jazzer](https://github.com/CodeIntelligenceTesting/jazzer) fuzzing tool.
+This is a small project for fuzzing [Apache Tika](https://tika.apache.org/) with the [jazzer](https://github.com/CodeIntelligenceTesting/jazzer) fuzzing tool.
 
 See [Fuzzing](https://en.wikipedia.org/wiki/Fuzzing) for a general description of the theory behind fuzzy testing.
 
@@ -22,8 +22,8 @@ Download the corpus of test-files from Apache POI sources
 
     svn co https://svn.apache.org/repos/asf/poi/trunk/test-data corpus
 
-You should also add documents from other testing-corpora as this only 
-has some document types while Tika can detect and parse a large set
+You should also add documents from other testing-corpora as this mostly 
+has Microsoft Office document types while Tika can detect and parse a large set
 of other files as well.
 
 Download Jazzer from the [releases page](https://github.com/CodeIntelligenceTesting/jazzer/releases), 
