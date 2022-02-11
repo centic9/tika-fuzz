@@ -12,29 +12,23 @@ set -eu
 ./gradlew shadowJar getDeps
 
 
-# extract class-files of Apache POi
+# extract jar-files of Apache Tika
 mkdir -p build/tikafiles
 cd build/tikafiles
-for i in `find /opt/apache/poi/dist/release/maven/ -type f | grep .jar | grep -v -- -sources.jar | grep -v -- -javadoc.jar | grep -v -- .sha512 | grep -v -- .sha256 | grep -v -- .asc | grep -v poi-ooxml-full | grep -v poi-integration | grep -v poi-examples | grep -v poi-excelant`; do
+
+# then unpack the class-files
+for i in `find ../runtime -name tika-*.jar`; do
   echo $i
   unzip -o -q $i
 done
 
-
-# Remove some packages that we do not want to include in the Report
-rm -r com
-rm -r org/openxmlformats
-rm -r org/etsi
-rm -r org/w3
-
 cd -
-
 
 
 # Fetch JaCoCo Agent
 test -f jacoco-0.8.7.zip || wget --continue https://repo1.maven.org/maven2/org/jacoco/jacoco/0.8.7/jacoco-0.8.7.zip
-unzip -o jacoco-0.8.7.zip lib/jacocoagent.jar
-mv lib/jacocoagent.jar build/
+unzip -o jacoco-0.8.7.zip lib/jacocoagent.jar lib/jacococli.jar
+mv lib/jacocoagent.jar lib/jacococli.jar build/
 rmdir lib
 
 mkdir -p build/jacoco
@@ -53,7 +47,7 @@ mkdir -p build/jacoco
 
 
 # Finally create the JaCoCo report
-java -jar /opt/poi/lib/util/jacococli.jar report build/jacoco/corpus.exec \
+java -jar build/jacococli.jar report build/jacoco/corpus.exec \
  --classfiles build/tikafiles \
  --classfiles build/classes/java/main \
  --sourcefiles /opt/apache/tika/trunk/tika-core/src/main/java \
