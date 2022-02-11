@@ -31,6 +31,9 @@ unzip -o jacoco-0.8.7.zip lib/jacocoagent.jar lib/jacococli.jar
 mv lib/jacocoagent.jar lib/jacococli.jar build/
 rmdir lib
 
+# Need to remove these as otherwise JaCoCo fails on duplicate classes
+rm -r build/tikafiles/META-INF/versions/
+
 mkdir -p build/jacoco
 
 
