@@ -36,7 +36,7 @@ Unpack the archive:
 
 Invoke the fuzzing:
 
-    ./jazzer --cp=build/libs/tika-fuzz-all.jar --instrumentation_excludes=org.apache.logging.**:org.slf4j.**:com.microsoft.schemas.**:org.openxmlformats.schemas.**:org.apache.xmlbeans.** --target_class=org.dstadler.tika.fuzz.Fuzz -rss_limit_mb=8192 corpus
+    ./jazzer --cp=build/libs/tika-fuzz-all.jar --instrumentation_excludes=org.apache.logging.**:org.slf4j.**:com.microsoft.schemas.**:org.openxmlformats.schemas.**:org.apache.xmlbeans.**:com.google.protobuf.**:com.google.common.**:ucar.nc2.**:org.mozilla.universalchardet.**:org.jdom2.**:javax.activation.**:javax.xml.bind.**:com.sun.** --target_class=org.dstadler.tika.fuzz.Fuzz -rss_limit_mb=8192 corpus
 
 In this mode Jazzer will stop whenever it detects an unexpected exception
 or crashes.

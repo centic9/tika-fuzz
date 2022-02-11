@@ -40,7 +40,7 @@ mkdir -p build/jacoco
 # Run Jazzer with JaCoCo-Agent to produce coverage information
 ./jazzer \
   --cp=build/libs/tika-fuzz-all.jar \
-  --instrumentation_excludes=org.apache.logging.**:org.slf4j.**:com.microsoft.schemas.**:org.openxmlformats.schemas.**:org.apache.xmlbeans.** \
+  --instrumentation_excludes=org.apache.logging.**:org.slf4j.**:com.microsoft.schemas.**:org.openxmlformats.schemas.**:org.apache.xmlbeans.**:com.google.protobuf.**:com.google.common.**:ucar.nc2.**:org.mozilla.universalchardet.**:org.jdom2.**:javax.activation.**:javax.xml.bind.**:com.sun.** \
   --target_class=org.dstadler.tika.fuzz.Fuzz \
   --nohooks \
   --jvm_args="-XX\\:-OmitStackTraceInFastThrow:-javaagent\\:build/jacocoagent.jar=destfile=build/jacoco/corpus.exec" \
