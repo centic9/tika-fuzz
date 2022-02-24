@@ -3,9 +3,9 @@ package org.dstadler.tika.fuzz;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
 
 import org.apache.tika.Tika;
+import org.apache.tika.exception.TikaException;
 
 public class Fuzz {
 	private static final Tika tika = new Tika();
@@ -20,7 +20,8 @@ public class Fuzz {
 		}
 
 		try (InputStream str = new ByteArrayInputStream(input)) {
-			try (Reader reader = tika.parse(str)) {
+			// using tika.parse() was slow as it creates a new Thread for each iteration
+			/*try (Reader reader = tika.parse(str)) {
 				char[] bytes = new char[1024];
 
 				// make sure to read all the resulting data
@@ -30,8 +31,10 @@ public class Fuzz {
 						break;
 					}
 				}
-			}
-		} catch (IOException | IllegalArgumentException e) {
+			}*/
+
+			tika.parseToString(str);
+		} catch (TikaException | IOException | AssertionError e) {
 			// expected here, Tika throws both types of exceptions here
 		}
 	}
