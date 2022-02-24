@@ -23,9 +23,12 @@ Download the corpus of test-files from Apache POI sources
 
     svn co https://svn.apache.org/repos/asf/poi/trunk/test-data corpus
 
-You should also add documents from other testing-corpora as this mostly 
-has Microsoft Office document types while Tika can detect and parse a large set
-of other files as well.
+You can fetch some additional corpus files from a local checkout of Tika
+
+    cp -a /opt/tika/*/src/test/resources/* corpus/
+
+Tika can detect and parse a large set of other files as well, so a different corpus
+might be useful to make the fuzzer trigger new code-areas.
 
 Download Jazzer from the [releases page](https://github.com/CodeIntelligenceTesting/jazzer/releases), 
 choose the latest version and select the file `jazzer-<os>-<version>.tar.gz`
