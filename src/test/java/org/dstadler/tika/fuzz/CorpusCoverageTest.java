@@ -34,6 +34,10 @@ public class CorpusCoverageTest {
 	@ParameterizedTest
 	@MethodSource("provideStringsForIsBlank")
 	void testCorpusFile(File file) throws IOException {
+		if (file.isDirectory()) {
+			return;
+		}
+
 		System.err.println("Running file " + file + " in thread " + Thread.currentThread().getName());
 		Fuzz.fuzzerTestOneInput(FileUtils.readFileToByteArray(file));
 	}
