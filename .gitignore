@@ -11,7 +11,7 @@ corpus/
 /jazzer_agent_deploy.jar
 /jazzer_api_deploy.jar
 /jazzer-linux.tar.gz
-/jazzer-linux-x86_64.tar.gz
+/jazzer-linux-*.tar.gz
 /jazzer_standalone.jar
 /jacoco-*.zip
 
